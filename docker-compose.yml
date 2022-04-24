@@ -1,0 +1,16 @@
+version: "3.2"
+services:
+  back:
+    image: back.image:latest
+    build: ./
+    ports:
+    - 80:80
+    expose:
+    - "80"
+    restart: always
+    env_file: .env
+    environment:
+        NODE_ENV: production
+        PORT: 80
+        HOST: 0.0.0.0
+        URL_DB_CONNECTION: $URL_DB_CONNECTION
